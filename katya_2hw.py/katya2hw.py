@@ -75,3 +75,35 @@ stdev2 = statistics.stdev(pressure_group2)
 print(f"Стандартное отклонение второй группы: {stdev2}")
 variance2 = statistics.variance(pressure_group2)
 print(f"Дисперсия второй группы: {variance2}")
+
+
+# задание по списка 2, сделанное с помощью функции:
+
+#задание по спискам 2
+import statistics
+pressure_group1 = [120, 127, 125, 130, 135, 132, 128]
+pressure_group2 = [140, 142, 145, 150, 138, 143, 147]
+
+def get_desriptive_statistics(pressure_list: list):
+    '''
+    возврщает описательные статистики выборки (передаваемого списка)
+
+    pressure_list: список АД пациентов (list)
+
+    return:
+        mean, median, standard deviation, variance
+    '''
+    avg = statistics.mean(pressure_list)
+    median = statistics.median(pressure_list)
+    stdev = statistics.stdev(pressure_list)
+    variance = statistics.variance(pressure_list)
+
+    output = f"\n ################ \n Average: {avg}, \n Median: {median}, \n St.deviation: {stdev}, \n Variance: {variance} \n ################ \n "
+
+    return output
+
+
+out_1 = get_desriptive_statistics(pressure_group1)
+out_2 = get_desriptive_statistics(pressure_group2)
+
+print(out_1, out_2)
